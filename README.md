@@ -15,7 +15,6 @@
 
 - [Project Overview](#-project-overview)
 - [Key Highlights](#-key-highlights)
-- [Project Structure](#-project-structure)
 - [Datasets Used](#-datasets-used)
 - [Tech Stack](#-tech-stack)
 - [Analysis Workflow](#-analysis-workflow)
@@ -57,26 +56,6 @@ On top of RFM scoring, **K-Means Clustering** is applied to validate segments an
 - ✅ **Interactive Dashboard** built with Plotly Dash (replaces Tableau)
 - ✅ Modular, clean code structure — notebooks + Python scripts
 - ✅ `requirements.txt` and `venv` setup ready to go
-
----
-
-## 📂 Project Structure
-
-```text
-├── data/
-│   ├── Raw_data.xlsx               # Source data with 4 sheets
-│   └── *_Cleaned.csv               # Processed datasets for analysis
-├── notebooks/
-│   ├── 01_DQA_Transactions.ipynb
-│   ├── 02_DQA_CustomerDemographic.ipynb
-│   ├── 03_DQA_NewCustomerList.ipynb
-│   ├── 04_DQA_CustomerAddress.ipynb
-│   └── 05_RFM_Analysis.ipynb
-├── dashboard/
-│   └── app.py                      # Plotly Dash application
-├── requirements.txt                # Project dependencies
-└── README.md
-```
 
 ---
 
