@@ -338,14 +338,6 @@ openpyxl
 
 ---
 
-## 👤 Author
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-
----
-
 ## 🙏 Acknowledgements
 
 > Original project concept by [Abhishek Chowdhury](https://github.com/AbhishekGit-hash) (2019).
