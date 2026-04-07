@@ -311,16 +311,6 @@ The interactive Plotly Dash dashboard includes:
 
 ---
 
-## 🔮 Future Improvements
-
-- [ ] Add **Customer Lifetime Value (CLV)** prediction using BG-NBD model
-- [ ] Integrate **Cohort Analysis** for retention tracking
-- [ ] Deploy dashboard on **Render / Railway** for public access
-- [ ] Add **email campaign automation** trigger per segment
-- [ ] Experiment with **DBSCAN** as an alternative to K-Means
-
----
-
 ## 📦 requirements.txt
 
 ```
@@ -335,13 +325,6 @@ ydata-profiling
 jupyter
 openpyxl
 ```
-
----
-
-## 🙏 Acknowledgements
-
-> Original project concept by [Abhishek Chowdhury](https://github.com/AbhishekGit-hash) (2019).
-> This version is fully rebuilt and modernized for 2025 with updated tools, ML integration, and a new interactive dashboard.
 
 ---
 
