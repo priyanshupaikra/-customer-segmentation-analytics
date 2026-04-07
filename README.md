@@ -1,4 +1,4 @@
-# 🚗 Customer Segmentation Analytics
+# Customer Segmentation Analytics
 ### Automobile Bike Company — RFM Model + K-Means Clustering
 
 ![Python](https://img.shields.io/badge/Python-3.11+-blue?style=flat-square&logo=python)
@@ -11,7 +11,7 @@
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Key Highlights](#-key-highlights)
@@ -28,7 +28,7 @@
 
 ---
 
-## 📖 Project Overview
+## 🎯 Project Overview
 
 This project performs a full **Customer Segmentation Analysis** for an Automobile Bike Company operating across Australia. The goal is to identify distinct customer groups based on purchasing behavior, so the business can:
 
@@ -60,59 +60,36 @@ On top of RFM scoring, **K-Means Clustering** is applied to validate segments an
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
-```
-customer-segmentation/
-│
+```text
 ├── data/
-│   ├── raw/                          # Original Excel files (unchanged)
-│   │   ├── Transactions_data.xlsx
-│   │   ├── NewCustomerList.xlsx
-│   │   ├── CustomerDemographic.xlsx
-│   │   └── CustomerAddress.xlsx
-│   └── cleaned/                      # Cleaned CSVs after DQA
-│       ├── Transactions_Cleaned.csv
-│       ├── NewCustomerList_Cleaned.csv
-│       ├── CustomerDemographic_Cleaned.csv
-│       └── CustomerAddress_Cleaned.csv
-│
+│   ├── Raw_data.xlsx               # Source data with 4 sheets
+│   └── *_Cleaned.csv               # Processed datasets for analysis
 ├── notebooks/
-│   ├── 01_DQA_CustomerDemographic.ipynb
-│   ├── 02_DQA_NewCustomerList.ipynb
-│   ├── 03_DQA_Transactions.ipynb
+│   ├── 01_DQA_Transactions.ipynb
+│   ├── 02_DQA_CustomerDemographic.ipynb
+│   ├── 03_DQA_NewCustomerList.ipynb
 │   ├── 04_DQA_CustomerAddress.ipynb
 │   └── 05_RFM_Analysis.ipynb
-│
-├── src/
-│   ├── data_cleaning.py              # All DQA + cleaning functions
-│   ├── rfm_model.py                  # RFM scoring logic
-│   ├── clustering.py                 # K-Means + Elbow method
-│   └── visualizations.py            # Reusable chart functions
-│
 ├── dashboard/
-│   └── app.py                        # Plotly Dash interactive dashboard
-│
-├── reports/
-│   └── eda_report.html               # Auto-generated ydata-profiling report
-│
-├── requirements.txt
-├── .gitignore
+│   └── app.py                      # Plotly Dash application
+├── requirements.txt                # Project dependencies
 └── README.md
 ```
 
 ---
 
-## 🗃️ Datasets Used
+## 📊 Datasets Used
 
-All datasets are from a single Excel file (`Raw_data.xlsx`) with the following sheets:
+All analysis is performed using a single Excel workbook (**Raw_data.xlsx**) containing four primary sheets:
 
-| Dataset | Description |
+| Sheet Name | Description |
 |---|---|
-| `Transactions_data.xlsx` | Customer transaction history across all Australian states |
-| `NewCustomerList.xlsx` | New customers who visited the company recently |
-| `CustomerDemographic.xlsx` | Full customer demographic details |
-| `CustomerAddress.xlsx` | Customer address and state information |
+| `Transactions` | Customer transaction history for the past 3 years |
+| `NewCustomerList` | List of 1,000 new customers with predicted values |
+| `CustomerDemographic` | Demographic data for 4,000 existing customers |
+| `CustomerAddress` | Living addresses of all existing customers |
 
 ---
 
@@ -131,32 +108,32 @@ All datasets are from a single Excel file (`Raw_data.xlsx`) with the following s
 
 ---
 
-## 🔄 Analysis Workflow
+## 📈 Analysis Workflow
 
 ### Step 1 — Data Quality Assessment & Cleaning
 
 Each dataset was assessed for data quality issues and cleaned accordingly:
 
-**CustomerDemographic.xlsx**
+**Sheet: CustomerDemographic**
 - Dropped 1 irrelevant column
 - Imputed or dropped missing values across 5 columns
 - Standardized the `gender` column (removed inconsistent entries like "F", "Femal", "Female")
 - Extracted `Age` and `Age Group` from Date of Birth; removed 1 outlier record
 - Confirmed no duplicate records
 
-**NewCustomerList.xlsx**
+**Sheet: NewCustomerList**
 - Dropped 5 irrelevant columns
 - Handled missing values in 4 columns
 - Extracted `Age` and `Age Group` features
 - Confirmed no duplicate records
 
-**Transactions_data.xlsx**
+**Sheet: Transactions**
 - Converted `product_first_sold_date` from `int64` to `datetime`
 - Handled missing values across 7 columns
 - Created a new `Profit` feature: `List Price − Standard Price`
 - Confirmed no duplicate records
 
-**CustomerAddress.xlsx**
+**Sheet: CustomerAddress**
 - Standardized `state` column values (e.g., "New South Wales" vs "NSW")
 - Identified and handled customer IDs missing from the demographics table
 
@@ -221,7 +198,7 @@ inertia = [KMeans(n_clusters=k, random_state=42).fit(rfm_scaled).inertia_ for k 
 
 ---
 
-## 🏷️ RFM Customer Segments
+## 👥 RFM Customer Segments
 
 Customers are divided into **11 segments** based on their RFM score:
 
@@ -299,7 +276,7 @@ Open your browser at `http://127.0.0.1:8050`
 
 ---
 
-## 📊 Dashboard Preview
+## 🖥️ Dashboard Preview
 
 The interactive Plotly Dash dashboard includes:
 
@@ -311,7 +288,7 @@ The interactive Plotly Dash dashboard includes:
 
 ---
 
-## 📦 requirements.txt
+## requirements.txt
 
 ```
 pandas>=2.0
@@ -328,6 +305,20 @@ openpyxl
 
 ---
 
-## 📄 License
+## 🌟 Future Improvements
+
+- [ ] Support for **Multi-Channel Attribution** analysis.
+- [ ] Integration with **Machine Learning** models for churn prediction.
+- [ ] **Automated PDF reporting** for business stakeholders.
+- [ ] Support for **Live Data Streams** via API integration.
+
+---
+
+## 👤 Author
+
+**Priyanshu Paikra**
+Data Analytics Enthusiast | [GitHub](https://github.com/priyanshupaikra)
+
+## 📜 License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
